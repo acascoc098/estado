@@ -12,6 +12,8 @@ const Counter = () => {
         <div>
             <p> El contador es: <a>{counter}</a></p>
             <button onClick={()=>{setCounter(counter+1);console.log(counter);}}>Incrementar</button>
+            <button onClick={()=>{setCounter(counter-1);console.log(counter);}}>Decrementar</button>
+            <button onClick={()=>{setCounter(0);console.log(counter);}}>Reset</button>
         </div>
 
     );
