@@ -3,6 +3,7 @@ import './App.css';
 import Counter from './Components/Counter';
 
 function App() {
+  console.log("Renderizando app: "+ App)
   return (
     /*<div className="App">
       <header className="App-header">
