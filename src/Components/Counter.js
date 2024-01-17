@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './Counter.css'
 
 const Counter = () => {
     //let counter = 0;
@@ -9,8 +10,8 @@ const Counter = () => {
     console.log("Renderizando counter: "+ counter);
     return(
         <div>
-            <p> El contador es: {counter}</p>
-            <button onClick={()=>{setCounter(counter+1);console.log(counter);}}>incrementar</button>
+            <p> El contador es: <a>{counter}</a></p>
+            <button onClick={()=>{setCounter(counter+1);console.log(counter);}}>Incrementar</button>
         </div>
 
     );
