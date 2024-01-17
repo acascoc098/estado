@@ -1,16 +1,16 @@
 import { useState } from "react";
 
 const Counter = () => {
-    let counter = 0;
+    //let counter = 0;
 
     //Todos los estados deben estar dento de un componente
-    useState(0)
+    const [counter, setCounter] = useState(0);
 
-    console.log("Renderizando counter: "+ Counter);
+    console.log("Renderizando counter: "+ counter);
     return(
         <div>
             <p> El contador es: {counter}</p>
-            <button onClick={()=>{counter++}}>incrementar</button>
+            <button onClick={()=>{setCounter(counter+1);console.log(counter);}}>incrementar</button>
         </div>
 
     );
