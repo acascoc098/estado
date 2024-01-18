@@ -1,8 +1,11 @@
-const Pie = ({counter}) => {
+
+const Pie = ({counter, children}) => {
     console.log('Renderizando Componente Pie ' + counter);
-    return (
-        <p>Pie de página</p>
-    );
+    return <>
+            <p>{children}</p>
+            <p>{counter}</p>
+        </>
+    ;
 }
 
 export default Pie;

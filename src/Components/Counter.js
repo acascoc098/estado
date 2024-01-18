@@ -1,6 +1,7 @@
 import { useState } from "react";
 import './Counter.css';
 import Pie from './Pie';
+import Card from "./Card";
 
 const Counter = () => {
     //let counter = 0;
@@ -55,7 +56,14 @@ const Counter = () => {
                 setCounter(counter-1)};
                 console.log(counter);}}>Decrementar</button>
             <button onClick={()=>{setCounter(0);console.log(counter);}}>Reset</button>
-            <Pie counter={counter}/>
+            
+            <Pie counter={counter}>
+                <b>Texto del pie</b> 
+                <br></br>
+                <i>Otro texto</i>
+            </Pie>
+
+            <Card>Esto es una tarjeta</Card>
         </div>
 
     );
