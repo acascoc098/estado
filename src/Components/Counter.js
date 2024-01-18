@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './Counter.css';
-//import Pie from './Components/Pie';
+import Pie from './Pie';
 
 const Counter = () => {
     //let counter = 0;
@@ -9,6 +9,8 @@ const Counter = () => {
     const [counter, setCounter] = useState(0);
     const [max, setMax] = useState(20);
     const [min, setMin] = useState(0);
+
+    const [range, setRange] = useState({min: 0, max: 20})
     /*Primer intento de poner un max y un min con un input
     function TextInput() {
         const [text, setText] = useState('');
@@ -22,17 +24,17 @@ const Counter = () => {
     return(
         <div>
             <p>Indica el máximo:</p>
-            <input type="number" value={max} onChange={event => {
+            <input type="number" value={range.max} onChange={event => {
                                                                 const newMax = parseInt(event.target.value);
-                                                                if (newMax > min) {
-                                                                    setMax(newMax)
+                                                                if (newMax > range.min) {
+                                                                    setRange({min: range.min, max: newMax})
                                                                 }
                                                                 
                                                                 if (counter > newMax) {
                                                                     setCounter(newMax);
                                                                 }
                                                                 }}/>
-            <p>Máximo de: {max}</p>
+            <p>Máximo de: {range.max}</p>
             <p>Indica el mínimo:</p>
             <input type="number" value={min} onChange={event => {
                                                                 const newMin = parseInt(event.target.value);
@@ -53,11 +55,10 @@ const Counter = () => {
                 setCounter(counter-1)};
                 console.log(counter);}}>Decrementar</button>
             <button onClick={()=>{setCounter(0);console.log(counter);}}>Reset</button>
-            
+            <Pie counter={counter}/>
         </div>
 
     );
-//<Pie counter={counter}/>
 }
 
 export default Counter;
