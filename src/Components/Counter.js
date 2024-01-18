@@ -17,13 +17,26 @@ const Counter = () => {
 
     console.log("Renderizando counter: "+ counter);
     console.log(max);
+    console.log(min);
     return(
         <div>
             <p>Indica el máximo:</p>
-            <input type="number" value={max} onChange={event => setMax(event.target.value)}/>
+            <input type="number" value={max} onChange={event => {
+                                                                const newMax = parseInt(event.target.value);
+                                                                setMax(newMax);
+                                                                if (counter > newMax) {
+                                                                    setCounter(newMax);
+                                                                }
+                                                                }}/>
             <p>Máximo de: {max}</p>
             <p>Indica el mínimo:</p>
-            <input type="number" value={min} onChange={event => setMin(event.target.value)}/>
+            <input type="number" value={min} onChange={event => {
+                                                                const newMin = parseInt(event.target.value);
+                                                                setMin(newMin);
+                                                                if (counter < newMin) {
+                                                                    setCounter(newMin);
+                                                                }
+                                                                }}/>
             <p>Mínimo de: {min}</p>
             <p> El contador es: <a>{counter}</a></p>
             <button onClick={()=>{if (counter < max) {
