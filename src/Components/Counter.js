@@ -24,7 +24,7 @@ const Counter = () => {
             <p>Indica el máximo:</p>
             <input type="number" value={max} onChange={event => {
                                                                 const newMax = parseInt(event.target.value);
-                                                                if (max > min) {
+                                                                if (newMax > min) {
                                                                     setMax(newMax)
                                                                 }
                                                                 
@@ -36,7 +36,7 @@ const Counter = () => {
             <p>Indica el mínimo:</p>
             <input type="number" value={min} onChange={event => {
                                                                 const newMin = parseInt(event.target.value);
-                                                                if (max > min) {
+                                                                if (max > newMin) {
                                                                     setMin(newMin)
                                                                 }
 
