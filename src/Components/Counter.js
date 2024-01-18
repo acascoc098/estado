@@ -16,11 +16,12 @@ const Counter = () => {
     return(
         <div>
             <p>Indica el máximo:</p>
-            <input type="text" value={text} onChange={handleChange}></input>
+            <input type="number" //</div>value={text} onChange={handleChange}
+            ></input>
             <p>Indica el mínimo:</p>
             <input type="text" id="min"></input>
             <p> El contador es: <a>{counter}</a></p>
-            <button onClick={()=>{if (counter<={text}) {
+            <button onClick={()=>{if (counter<=19) {
                 setCounter(counter+1)};
                 console.log(counter);}}>Incrementar</button>
             <button onClick={()=>{if(counter > 0){
