@@ -19,7 +19,7 @@ const Counter = () => {
     setText(event.target.value);}
     }*/
 
-    console.log("Renderizando counter: "+ counter);
+    console.log("Renderizando counter: ");
     console.log(max);
     console.log(min);
     return(
@@ -28,7 +28,8 @@ const Counter = () => {
             <input type="number" value={range.max} onChange={event => {
                                                                 const newMax = parseInt(event.target.value);
                                                                 if (newMax > range.min) {
-                                                                    setRange({min: range.min, max: newMax})
+                                                                    setMax(newMax);
+                                                                    {/*setRange({min: range.min, max: newMax})*/}
                                                                 }
                                                                 
                                                                 if (counter > newMax) {
@@ -51,11 +52,11 @@ const Counter = () => {
             <p> El contador es: <a>{counter}</a></p>
             <button onClick={()=>{if (counter < max) {
                 setCounter(counter+1)};
-                console.log(counter);}}>Incrementar</button>
+                console.log('Incremento '+counter);}}>Incrementar</button>
             <button onClick={()=>{if(counter > min){
                 setCounter(counter-1)};
-                console.log(counter);}}>Decrementar</button>
-            <button onClick={()=>{setCounter(0);console.log(counter);}}>Reset</button>
+                console.log('Decremento '+counter);}}>Decrementar</button>
+            <button onClick={()=>{setCounter(0); setMax(20); setMin(0);console.log(counter);}}>Reset</button>
             
             <Pie counter={counter}>
                 <b>Texto del pie</b> 

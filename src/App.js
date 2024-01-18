@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Counter from './Components/Counter';
+import Card from './Components/Card';
 
 function App() {
   console.log("Renderizando app: "+ App)
@@ -23,7 +24,9 @@ function App() {
     </div>*/
 
     <div>
-      <Counter/>
+      <Card>
+        <Counter/>
+      </Card>
     </div>
     
   );
